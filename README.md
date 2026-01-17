@@ -1,0 +1,1 @@
+Este projeto é uma Proof of Concept (PoC) de uma arquitetura escalável para gestão hospitalar, demonstrando uso de Spring Boot, Tratamento de Exceções Global e Documentação com Swagger.
