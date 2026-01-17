@@ -26,3 +26,27 @@ graph TD;
     Repository <-->|Entity| DB[(H2 Database)];
     
     Handler[GlobalExceptionHandler] -.->|Intercepta Erros| Controller;
+```
+Regras de Negócio Implementadas
+
+* **Unicidade de Identificador**: Não é permitido o cadastro de dois leitos com o mesmo código identificador.
+* **Segurança Operacional**: O sistema impede a alocação de pacientes em leitos que possuam o status MANUTENCAO.
+* **Filtragem Inteligente**: Endpoints específicos para consulta de disponibilidade imediata.
+
+⚡ Como Rodar o Projeto
+
+    Certifique-se de ter o JDK 24 (ou compatível) instalado.
+    Clone o repositório.
+    No terminal, na raiz do projeto, execute:
+    Bash
+    ./mvnw spring-boot:run
+    A API estará disponível em: http://localhost:8080
+
+📖 Documentação da API (Swagger)
+
+Com a aplicação rodando, acesse a documentação interativa para testar os endpoints: 👉 http://localhost:8080/swagger-ui.html
+
+Desenvolvido por Daniel Faria Engenheiro de Software focado em soluções escaláveis e arquitetura limpa.
+
+
+---
