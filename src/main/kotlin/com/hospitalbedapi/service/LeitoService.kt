@@ -12,6 +12,10 @@ class LeitoService(private val repository: LeitoRepository) {
         return repository.findAll()
     }
 
+    fun buscarDisponiveis(): List<Leito> {
+        return repository.findByStatus(Leito.StatusLeito.LIVRE)
+    }
+
     fun criarLeito(dto: LeitoDTO): Leito {
         // Regra de Negócio: Se estiver em manutenção, não pode ter paciente
         if (dto.status == Leito.StatusLeito.MANUTENCAO && !dto.pacienteAtual.isNullOrBlank()) {

@@ -14,7 +14,7 @@ class OpenApiConfig {
             .info(
                 Info()
                 .title("API Gestão Hospitalar")
-                .version("1.0")
+                .version("1.1")
                 .description("API desenvolvida para conceito de projeto")
             )
     }

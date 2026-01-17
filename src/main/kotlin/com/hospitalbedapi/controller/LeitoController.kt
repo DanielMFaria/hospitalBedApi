@@ -24,6 +24,12 @@ class LeitoController(private val service: LeitoService) {
         return service.listarTodos()
     }
 
+    @GetMapping("/disponiveis")
+    @Operation(summary = "Listar todos os leitos disponíveis", description = "Retorna a lista disponível do hospital")
+    fun listarDisponiveis(): List<Leito> {
+        return service.buscarDisponiveis()
+    }
+
     @PostMapping
     @Operation(summary = "Criar novo leito", description = "Cadastra um leito no sistema")
     fun criar(@RequestBody @Valid dto: LeitoDTO): ResponseEntity<Leito> {
