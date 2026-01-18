@@ -8,7 +8,6 @@ import org.springframework.web.bind.annotation.ExceptionHandler
 @ControllerAdvice
 class GlobalExceptionHandler {
 
-    // Captura erros de regra de negócio (o que você testou da MANUTENCAO)
     @ExceptionHandler(IllegalArgumentException::class)
     fun handleBadRequest(ex: IllegalArgumentException): ResponseEntity<Map<String, String>> {
         val errorResponse = mapOf(
@@ -18,8 +17,7 @@ class GlobalExceptionHandler {
         return ResponseEntity(errorResponse, HttpStatus.BAD_REQUEST)
     }
 
-    // Captura erros de duplicidade (o erro do Código Único UTI-01)
-    @ExceptionHandler(org.springframework.dao.DataIntegrityViolationException::class)
+    ExceptionHandler(org.springframework.dao.DataIntegrityViolationException::class)
     fun handleConflict(ex: Exception): ResponseEntity<Map<String, String>> {
         val errorResponse = mapOf(
             "erro" to "Conflito de Dados",
