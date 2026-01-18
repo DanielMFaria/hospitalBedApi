@@ -40,7 +40,7 @@ Regras de Negócio Implementadas
     No terminal, na raiz do projeto, execute:
     Bash
     ./mvnw spring-boot:run
-    A API estará disponível em: http://localhost:8080
+    A API estará disponível em: http://localhost:8080/swagger-ui/index.html
 
 📖 Documentação da API (Swagger)
 
@@ -48,5 +48,13 @@ Com a aplicação rodando, acesse a documentação interativa para testar os end
 
 Desenvolvido por Daniel Faria Engenheiro de Software focado em soluções escaláveis e arquitetura limpa.
 
+## 🧪 Testes Unitários
+O projeto conta com suite de testes automatizados utilizando **JUnit 5**, garantindo que as regras de negócio críticas (como a trava de manutenção) permaneçam íntegras durante a evolução do código.
 
+## 🐳 Dockerização
+Aplicação containerizada para facilitar o deploy e garantir paridade entre ambientes:
+```bash
+docker build -t hospital-api .
+docker run -p 8080:8080 hospital-api
+```
 ---
